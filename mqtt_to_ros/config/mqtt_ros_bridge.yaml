@@ -1,0 +1,10 @@
+broker:
+  host: 54.87.65.252
+  port: 1883
+  username: srinivas18  
+  password: mosquitto   
+
+bridge:
+  mqtt2ros:
+    - mqtt_topic: pingpong/ros
+      ros_topic: /pong/ros

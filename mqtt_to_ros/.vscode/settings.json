@@ -1,0 +1,15 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/manvitha/ros2_ws/install/trial/lib/python3.10/site-packages",
+        "/home/manvitha/ros2_ws/install/mqtt_to_ros/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/manvitha/ros2_ws/install/trial/lib/python3.10/site-packages",
+        "/home/manvitha/ros2_ws/install/mqtt_to_ros/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "ros.distro": "humble"
+}

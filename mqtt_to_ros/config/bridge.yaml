@@ -1,0 +1,7 @@
+broker:
+  host: 23.22.39.65
+  port: 1883
+bridge:
+  mqtt2ros:
+    - mqtt_topic: pingpong/ros
+      ros_topic: /pong/ros
