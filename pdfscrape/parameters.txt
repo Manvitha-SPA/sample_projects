@@ -1,0 +1,17 @@
+
+SC
+parameters
+
+scr number                                  done
+date of decision
+data of nature(judgement)
+Justice Name(Judge Name)
+
+
+
+High Court 
+
+CNR Number 
+date of decision
+data of nature(judgement)
+Justice Name(Judge Name)
