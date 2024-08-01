@@ -1,0 +1,50 @@
+Our aim was to understand the working and installation of ros2 on local system.
+
+Create a nodes .Nodes are responsible  for a single specific purpose i.e, either to send messages or recieve messages via topic or service or action or parameters  to other nodes.
+
+
+
+Topic is like intermediate i.e, each node can publish the message/information that topic or subscribe to that topic to access the message or information in that topic.
+
+Action 
+When action client sends the goal request to the action server.Action server processes that request then sends the stream of feedback related to the request.As soon as the server achieves the goal then server will send the result to the client 
+
+
+
+
+
+nodes
+ros2 node list
+ros2 node list -t
+
+topic
+ros2 topic list
+ros2 topic list -t
+ros2 interface show <msg_type>
+ros2 topic echo <topic_name>
+ros2 topic info <topic_name>
+ros2 topic pub <topic_name> <msg_type> '<args>'
+ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0,   z: 0.0}, angular: {x: 0.0, y: 0.0, z: 1.8}}"
+
+Service
+ros2 service list 
+ros2 service list -t
+ros2 service find <service_type_name>
+ros2 type <service_name>
+ros2 interface show <service_type_name>
+
+Parameters 
+ros2 param list
+ros2 param get <node_name> <param_name>
+ros2 param get /turtlesim background_g 
+
+ros2 param set <node_name> <param_name> <value>
+ros2 param set /turtlesim background_g 1
+
+Action
+ros2 action list
+ros2 action list -t
+ros2 action info <action_name>
+ros2 action send_goal <action_name> <action_type> <value>
+ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 1.57}"
+ros2 interface show <action_type>
