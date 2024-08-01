@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scraped Data</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <h1 style="color:orange;">Scraped Data:</h1>
+    <table>
+      <tr>
+        <th> Name</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Timings</th>
+        <th>APC for 2</th>
+        <th>Parking Availability</th>
+        <th>Pet friendly</th>
+        <th>Cuisines</th>
+        <th>Payment Method</th>
+        <th>More Info</th>
+        <th>Seating Type</th>
+        <th>Table Reservation Availability</th>
+      </tr>  
+      <tr>
+        <td>{{ output.name }}</td>
+        <td>{{ output.address }}</td>
+        <td>{{ output.phone_num }}</td>
+        <td>{{ output.timings }}</td>
+        <td>{{ output.apc }}</td>
+        <td>{{ output.park }}</td>
+        <td>{{ output.pet }}</td>
+        <td>{{ output.cui }}</td>
+        <td>{{ output.pay }}</td>
+        <td>{{ output.mi }}</td>
+        <td>{{output.seat}}</td>
+        <td>{{output.t_reserve}}</td>
+      </tr>
+  </table><br><br>
+  <form method="post" action="{% url 'add_to_db' %}">
+    {% csrf_token %}
+    <input type="hidden" name="name" value="{{ output.name }}">
+    <input type="hidden" name="address" value="{{ output.address }}">
+    <input type="hidden" name="phone_num" value="{{ output.phone_num }}">
+    <input type="hidden" name="timings" value="{{ output.timings }}">
+    <input type="hidden" name="apc" value="{{ output.apc }}">
+    <input type="hidden" name="park" value="{{ output.park }}">   
+    <input type="hidden" name="pet" value="{{ output.pet }}">
+    <input type="hidden" name="cui" value="{{ output.cui }}">
+    <input type="hidden" name="pay" value="{{ output.pay }}">
+    <input type="hidden" name="mi"  value="{{output.mi}}" >
+    <input type="hidden" name="seat" value="{{output.seat}}">
+    <input type="hidden" name="t_reserve" value="{{output.t_reserve}}">
+    
+    <div style="text-align: center;"> <!-- Center-align the buttons -->
+      <button type="submit" name="action" value="add" style="width: 100px; height: 40px; padding: 5px 10px; cursor: pointer; background-color: green; color: white;">Add</button>
+      <button type="submit" name="action" value="ignore" style="width: 100px; height: 40px; padding: 5px 10px; cursor: pointer; background-color: blue; color: white;">Ignore</button>
+    </div> 
+    </form>
+  
+</body>
+</html>
